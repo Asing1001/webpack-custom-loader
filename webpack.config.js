@@ -13,11 +13,15 @@ module.exports = {
         rules: [
             {
                 test: /\.js/,
-                use: {
-                    loader: 'firstLoader',
-                    options: { 'key': 'bar' }
-                }
-            }
+                use: [{
+                    loader: 'replaceLoader',
+                    options: {
+                        'world': 'bar',
+                        'hello': 'foo'
+                    }
+                },]
+            },
+
         ]
     }
 }
